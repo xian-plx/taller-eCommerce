@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { UserComponent } from './components/user/user.component';
 import { SearcherComponent } from './components/searcher/searcher.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { SearcherComponent } from './components/searcher/searcher.component';
     RegisterComponent,
     ProductDetailComponent,
     UserComponent,
-    SearcherComponent
+    SearcherComponent,
+    CartComponent
   ],
   bootstrap: [ AppComponent ]
 })
