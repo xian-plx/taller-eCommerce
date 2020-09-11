@@ -1,0 +1,24 @@
+<h2>Productos</h2>
+
+<p>Número total de productos: {{products.length}}</p>
+
+<div class="col-md-2">
+    <!--Sidebar content-->
+
+    Search: <input ng-model="$ctrl.query" />
+
+    <p>meter un ng-change, ver cómo es en Angular</p>
+</div>
+
+<ul>
+    <li *ngFor="let product of products">
+        <span>{{product.name}}</span>
+        <p>{{product.description}}</p>
+    </li>
+</ul>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
