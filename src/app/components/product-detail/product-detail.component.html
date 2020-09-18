@@ -1,1 +1,119 @@
 <p>product-detail works!</p>
+
+<!-- <div class="phone-images">
+    <img src="{{img}}" class="phone" ng-class="{selected: img === $ctrl.mainImageUrl}"
+        ng-repeat="img in chosenProduct.images" />
+</div> -->
+
+<h1>{{chosenProduct.name}}</h1>
+
+<p>{{chosenProduct.description}}</p>
+
+<ul class="phone-thumbs">
+    <li ng-repeat="img in chosenProduct.images">
+        <!-- <img ng-src="{{img}}" ng-click="$ctrl.setImage(img)" /> -->
+    </li>
+    <button (click)="saveCart(chosenProduct.id)">Añadir al carrito</button>
+</ul>
+
+<ul class="specs">
+    <li>
+        <span>Availability and Networks</span>
+        <dl>
+            <dt>Availability</dt>
+            <dd *ngFor="let availability of chosenProduct.availability">{{availability}}</dd>
+        </dl>
+    </li>
+    <li>
+        <span>Battery</span>
+        <dl>
+            <dt>Type</dt>
+            <dd>{{chosenProduct.battery.type}}</dd>
+            <dt>Talk Time</dt>
+            <dd>{{chosenProduct.battery.talkTime}}</dd>
+            <dt>Standby time (max)</dt>
+            <dd>{{chosenProduct.battery.standbyTime}}</dd>
+        </dl>
+    </li>
+    <li>
+        <span>Storage and Memory</span>
+        <dl>
+            <dt>RAM</dt>
+            <dd>{{chosenProduct.storage.ram}}</dd>
+            <dt>Internal Storage</dt>
+            <dd>{{chosenProduct.storage.flash}}</dd>
+        </dl>
+    </li>
+    <li>
+        <span>Connectivity</span>
+        <dl>
+            <dt>Network Support</dt>
+            <dd>{{chosenProduct.connectivity.cell}}</dd>
+            <dt>WiFi</dt>
+            <dd>{{chosenProduct.connectivity.wifi}}</dd>
+            <dt>Bluetooth</dt>
+            <dd>{{chosenProduct.connectivity.bluetooth}}</dd>
+            <dt>Infrared</dt>
+            <dd>{{chosenProduct.connectivity.infrared}}</dd>
+            <dt>GPS</dt>
+            <dd>{{chosenProduct.connectivity.gps}}</dd>
+        </dl>
+    </li>
+    <li>
+        <span>Android</span>
+        <dl>
+            <dt>OS Version</dt>
+            <dd>{{chosenProduct.android.os}}</dd>
+            <dt>UI</dt>
+            <dd>{{chosenProduct.android.ui}}</dd>
+        </dl>
+    </li>
+    <li>
+        <span>Size and Weight</span>
+        <dl>
+            <dt>Dimensions</dt>
+            <dd *ngFor="let dim of chosenProduct.sizeAndWeight.dimensions">{{dim}}</dd>
+            <dt>Weight</dt>
+            <dd>{{chosenProduct.sizeAndWeight.weight}}</dd>
+        </dl>
+    </li>
+    <li>
+        <span>Display</span>
+        <dl>
+            <dt>Screen size</dt>
+            <dd>{{chosenProduct.display.screenSize}}</dd>
+            <dt>Screen resolution</dt>
+            <dd>{{chosenProduct.display.screenResolution}}</dd>
+            <dt>Touch screen</dt>
+            <dd>{{chosenProduct.display.touchScreen}}</dd>
+        </dl>
+    </li>
+    <li>
+        <span>Hardware</span>
+        <dl>
+            <dt>CPU</dt>
+            <dd>{{chosenProduct.hardware.cpu}}</dd>
+            <dt>USB</dt>
+            <dd>{{chosenProduct.hardware.usb}}</dd>
+            <dt>Audio / headphone jack</dt>
+            <dd>{{chosenProduct.hardware.audioJack}}</dd>
+            <dt>FM Radio</dt>
+            <dd>{{chosenProduct.hardware.fmRadio}}</dd>
+            <dt>Accelerometer</dt>
+            <dd>{{chosenProduct.hardware.accelerometer}}</dd>
+        </dl>
+    </li>
+    <li>
+        <span>Camera</span>
+        <dl>
+            <dt>Primary</dt>
+            <dd>{{chosenProduct.camera.primary}}</dd>
+            <dt>Features</dt>
+            <dd>{{chosenProduct.camera.features.join(', ')}}</dd>
+        </dl>
+    </li>
+    <li>
+        <span>Additional Features</span>
+        <dd>{{chosenProduct.additionalFeatures}}</dd>
+    </li>
+</ul>
