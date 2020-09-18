@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
@@ -13,6 +14,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { UserComponent } from './components/user/user.component';
 import { SearcherComponent } from './components/searcher/searcher.component';
 import { CartComponent } from './components/cart/cart.component';
+import { OffersComponent } from './components/offers/offers.component';
 
 @NgModule({
   imports: [
@@ -21,7 +23,9 @@ import { CartComponent } from './components/cart/cart.component';
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
     ]),
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   declarations: [
     AppComponent,
@@ -32,7 +36,8 @@ import { CartComponent } from './components/cart/cart.component';
     ProductDetailComponent,
     UserComponent,
     SearcherComponent,
-    CartComponent
+    CartComponent,
+    OffersComponent
   ],
   bootstrap: [ AppComponent ]
 })

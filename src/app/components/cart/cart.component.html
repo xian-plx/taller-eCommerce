@@ -1,1 +1,9 @@
 <p>cart works!</p>
+
+<ul>
+    <li *ngFor="let product of productsInCart">
+        <span routerLink="/productDetail/{{product.id}}"><a>{{product.name}}</a></span>
+        <p>{{product.price}} €</p>
+        <button (click)="deleteFromCart(product.id)">X</button>
+    </li>
+</ul>
