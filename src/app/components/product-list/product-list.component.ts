@@ -1,20 +1,26 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { products } from '../../objects/mock-products';
+import { PRODUCTS } from "../../objects/mock-product";
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  selector: "app-product-list",
+  templateUrl: "./product-list.component.html",
+  styleUrls: ["./product-list.component.css"],
 })
 export class ProductListComponent {
-  products = products;
+  products = PRODUCTS;
 
-  share() {
-    window.alert('The product has been shared!');
-  }
+  term: any;
+
+  // share() {
+  //   window.alert("The product has been shared!");
+  // }
+
+  // goToDetail(id: string) {
+
+  // }
+
 }
-
 
 /*
 Copyright Google LLC. All Rights Reserved.

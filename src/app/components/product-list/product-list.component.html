@@ -5,14 +5,15 @@
 <div class="col-md-2">
     <!--Sidebar content-->
 
-    Search: <input ng-model="$ctrl.query" />
+    <div>
+        <input placeholder=" Buscar..." type="text" [(ngModel)]="term">
+    </div>
 
-    <p>meter un ng-change, ver cómo es en Angular</p>
 </div>
 
 <ul>
-    <li *ngFor="let product of products">
-        <span>{{product.name}}</span>
+    <li *ngFor="let product of products | filter:term">
+        <span routerLink="/productDetail/{{product.id}}"><a>{{product.name}}</a></span>
         <p>{{product.description}}</p>
     </li>
 </ul>
